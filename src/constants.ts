@@ -1,0 +1,8 @@
+export const STRATEGY_STATUS = {
+    CREATED: 'CREATED',
+    STARTED: 'STARTED',
+    FINISHED: 'FINISHED',
+    CANCELED: 'CANCELED',
+    HOLD: 'HOLD',
+    UNHOLD: 'UNHOLD',
+};

@@ -1,0 +1,38 @@
+.StrategyCard {
+    max-width: 400px;
+    justify-content: center;
+    align-content: center;
+    padding-top: 15px;
+}
+
+.DateRight {
+    color: #4a4a4a;
+    font-size: 11px;
+    text-align: right;
+}
+
+.StrategyCardGrid {
+    justify-content: center;
+    align-content: center;
+}
+
+.SummaryItem {
+    text-align: left;
+    padding: 0 10px;
+    margin: 10px 0;
+}
+.StatusHOLD {
+    background-color: #a35400 !important;
+}
+.StatusUNHOLD {
+    background-color: #08dea13d !important;
+}
+.StatusFINISHED {
+    background-color: #08dea13d !important;
+}
+.StatusCANCELED {
+    background-color: #b12424 !important;
+}
+.StatusSTARTED {
+    background-color: #109fa5 !important;
+}

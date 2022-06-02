@@ -1,0 +1,26 @@
+body, html{
+    background: #212121;
+    padding: 0;
+    margin: 0;
+    height: 100%;
+}
+.h100{
+    height: 100%;
+}
+
+.BuyColor {
+    color: #69c407
+}
+.SellColor {
+    color: #b12424
+}
+.NavBar {
+    background: #121212;
+    padding: 24px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+}
+.NavBar h1{
+    margin: 0;
+}
