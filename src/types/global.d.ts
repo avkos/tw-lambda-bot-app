@@ -62,5 +62,6 @@ declare global {
         }
         types: string[]
     }
+    type TPrices = { [key: string]: number }
 }
 

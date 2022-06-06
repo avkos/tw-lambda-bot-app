@@ -4,24 +4,23 @@ import {useAuth} from '../../contexts/AuthContext';
 import {Button} from "@mui/material";
 import Container from "@mui/material/Container";
 
-export const CheckAuth = (props: any) => {
+type TCheckAuthProps = {
+    isGuest?: boolean
+    children: React.ReactNode
+}
+export const CheckAuth = (props: TCheckAuthProps) => {
     const {isGuest = false, children} = props;
     const {isAuthenticated = false, user, signOut} = useAuth();
 
     const noNeedRedirect = isGuest ? !isAuthenticated : isAuthenticated
     const redirectUrl = noNeedRedirect ? false : (isGuest ? '/' : '/in')
 
-
     if (redirectUrl) {
-        return (
-            <Navigate
-                replace
-                to={redirectUrl}
-            />
-        )
+        return <Navigate replace to={redirectUrl}/>
     }
+
     if (isGuest) {
-        return children
+        return <>{children}</>
     }
 
     return (

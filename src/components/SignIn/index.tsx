@@ -59,7 +59,7 @@ export default function SignIn() {
                     </div>
                 )}
                 <div>
-                    <Button sx={{mt: 1, mr: 1}} type="submit" variant="outlined" disabled={process}>
+                    <Button type="submit" variant="outlined" disabled={process}>
                         Submit
                     </Button>
                 </div>

@@ -50,14 +50,6 @@ export class AuthContextProvider extends React.Component<any> {
             });
     }
 
-    componentWillUnmount() {
-
-    }
-
-    setUnauthorizedListener = () => {
-        this.setState({isAuthenticated: false});
-    };
-
     signIn = async (login: string, password: string) => {
         return Auth.signIn(login, password).then((res) => {
             const {

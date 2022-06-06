@@ -9,12 +9,7 @@ import {STRATEGY_STATUS} from "../../constants";
 import Grid from "@mui/material/Grid";
 import {Chip} from "@mui/material";
 
-
-const prices: { [key: string]: number } = {
-    'ETHUSDT': 2020
-}
-
-export default function OutlinedCard({item}: { item: TStrategy }) {
+export default function StrategyCard({item, prices}: { item: TStrategy, prices: TPrices }) {
     const pnl = item.status === STRATEGY_STATUS.STARTED ? order.getOrderQuantity(item.data?.buyOrder) *
         (prices[item.symbol] - order.getOrderPrice(item.data?.buyOrder)) : 0
     return (
@@ -37,8 +32,8 @@ export default function OutlinedCard({item}: { item: TStrategy }) {
                         <div className="SummaryItem">
                             <Typography variant='h5'>
                                 Buy <span className='BuyColor'>{Number(order.getOrderQuantity(
-                                item.data?.buyOrder)).toFixed(3)}{order.getCurrency(item.symbol)}</span> by
-                                price <span className='BuyColor'>{formatNumberToUsd(
+                                item.data?.buyOrder)).toFixed(3)}{order.getCurrency(item.symbol)}</span> <span>at </span>
+                                <span className='BuyColor'>{formatNumberToUsd(
                                 order.getOrderPrice(item.data?.buyOrder))}</span>. Sum: <span
                                 className='BuyColor'>{formatNumberToUsd(
                                 order.getOrderQuantityUSD(item.data?.buyOrder))}</span>
@@ -53,7 +48,7 @@ export default function OutlinedCard({item}: { item: TStrategy }) {
                             </div>) : (item.status === STRATEGY_STATUS.HOLD ? (
                             <div className="SummaryItem">
                                 <Typography variant='h5'>
-                                    Wait For Price: <span className='BuyColor'>{formatNumberToUsd(
+                                    Expect price: <span className='BuyColor'>{formatNumberToUsd(
                                     item.data?.unHoldPrice)}</span>
                                 </Typography>
                             </div>
@@ -79,7 +74,6 @@ export default function OutlinedCard({item}: { item: TStrategy }) {
                                 </Typography>
                             </div>
                         )}
-
                     </CardContent>
                 </React.Fragment>
             </Card>

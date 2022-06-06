@@ -4,9 +4,8 @@ import "./Loading.css";
 
 export default function Loading() {
     return (
-        <Box sx={{display: 'flex'}} className='Loading h100'>
+        <Box className='Loading h100'>
             <CircularProgress/>
         </Box>
     )
 }
-
